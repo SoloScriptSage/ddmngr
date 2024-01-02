@@ -11,7 +11,7 @@ class Deadline:
         self.attachments = attachments or []
 
     def display_task(self):
-        return f"Label: {self.label}\nTime: {self.time}\nDescription: {self.description}\nPriority: +{self.priority}\nStatus: {self.status}\nProject: {self.project}\nAttachments: {', '.join(self.attachments)}"
+        return f"Label: {self.label}\nTime: {self.time}\nDescription: {self.description}\nPriority: {self.priority}\nStatus: {self.status}\nProject: {self.project}\nAttachments: {', '.join(self.attachments)}"
 
     def to_xml_element(self):
         task_element = ET.Element("Deadline")
