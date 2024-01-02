@@ -1,5 +1,3 @@
-Certainly! Here is a single Markdown file that you can copy and paste as your README.md on GitHub:
-
 # Deadline Manager
 
 Deadline Manager is a simple task management application built using Tkinter and Python. It allows you to organize and manage tasks, including deadlines, descriptions, priorities, and more.
