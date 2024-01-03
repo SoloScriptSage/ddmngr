@@ -57,8 +57,12 @@ for i, deadline_element in enumerate(xml_root.findall("Deadline")):
     loaded_deadlines.append(Deadline.from_xml_element(deadline_element))
 
     # Frame for each task
-    task_frame = customtkinter.CTkFrame(master=scrollable_frame, fg_color="transparent")
+    task_frame = customtkinter.CTkFrame(
+        master=scrollable_frame, 
+        fg_color="transparent"
+    )
     task_frame.pack(side='top', fill='x', padx=10, pady=5, ipadx=10, ipady=5)
+
 
     task_label = customtkinter.CTkLabel(
         master=task_frame,
@@ -66,8 +70,7 @@ for i, deadline_element in enumerate(xml_root.findall("Deadline")):
         fg_color="transparent",
         font=("Helvetica", 18, "bold"),
     )
-
-    task_label.pack(side='left', pady=5)  # Pack with vertical padding
+    task_label.pack(side='top', pady=5, fill='y')  # Pack with vertical padding
 
     # Description label (below task_label within the left frame)
     description_label = customtkinter.CTkLabel(
@@ -76,11 +79,11 @@ for i, deadline_element in enumerate(xml_root.findall("Deadline")):
         fg_color="transparent",
         font=("Helvetica", 14)
     )
-    description_label.pack(side='left', pady=(2, 0), padx=5)  # Pack with vertical padding
+    description_label.pack(side='top')  # Pack with vertical padding
 
-    # Priority Label (on the right) just created
-    priority_label = customtkinter.CTkLabel(master=task_frame, text=f"Priority: {loaded_deadlines[i].priority}", fg_color="transparent")
-    priority_label.pack(side='right')
+    # # Priority Label (on the right) just created
+    # priority_label = customtkinter.CTkLabel(master=task_frame, text=f"Priority: {loaded_deadlines[i].priority}", fg_color="transparent")
+    # priority_label.pack(side='right')
 
 
 
